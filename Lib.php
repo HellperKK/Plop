@@ -1,24 +1,87 @@
-<?php 
-/*
-	class Test{
-		function foo() {
-			return "Bonjour le monde !";
-		}
-	}
-*/
+<?php 	
 	class SimpleElement{
-		
-	}
-	class ComplexElement{
 		function __construct() {
-			$this->liste = [];
+			$this->value = NULL;
+			$this->id = "";
+			$this->classe = "";
+		}
+		function isComplex(){
+			return false;
+		}
+		function setValue($aValue) {
+			$this->value = $aValue;
+			return $this;
+		}
+		function setId($anId) {
+			$this->id = $anId;
+			return $this;
+		}
+		function setClass($aClass) {
+			$this->classe = $aClass;
+			return $this;
 		}
 		function generate(){
-			return "Hello world !";
+			return "";
+		}
+		function bData(){
+			$a = "";
+			if ($this->id != ""){
+				$a = $a . "id='" . $this->id ."' ";
+			}
+			if ($this->classe != ""){
+				$a = $a . "class='" . $this->classe ."' ";
+			}
+			return $a;
+		}
+	}
+	class ComplexElement{
+		function __construct(){
+			$this->value = [];
+		}
+		function isComplex(){
+			return true;
 		}
 		function addElement($anElement){
-			array_push($this->liste, $anElement);
+			array_push($this->value, $anElement);
 			return $this;
+		}
+		function generate(){
+			$chaine = "";
+			foreach ($this->value as $i){
+				$chaine = $chaine . $i->generate() . "\n";
+			}
+			return $chaine;
+		}
+	}
+	class Paragraph extends SimpleElement{
+		function isComplex(){
+			return false;
+		}
+		function setValue($aValue) {
+			$this->value = $aValue;
+			return $this;
+		}
+		function generate(){
+			return "<p " . $this->bData() . ">$this->value</p>";
+		}
+	}
+	class Anchor extends SimpleElement{//non finie
+		function __construct() {
+			$this->value = NULL;
+		}
+		function isComplex(){
+			return false;
+		}
+		function setValue($aValue) {
+			$this->value = $aValue;
+			return $this;
+		}
+		function setAction($aFunction) {
+			$this->action = $aFunction;
+			return $this;
+		}
+		function generate(){
+			return "<a href=test.html>$this->value</a>";
 		}
 	}
 ?>
