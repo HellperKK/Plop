@@ -1,7 +1,7 @@
 <?php 	
 	class SimpleElement{
-		function __construct() {
-			$this->value = NULL;
+		function __construct($test) {
+			$this->value = $test;
 			$this->id = "";
 			$this->classe = "";
 		}
@@ -54,28 +54,11 @@
 		}
 	}
 	class Paragraph extends SimpleElement{
-		function isComplex(){
-			return false;
-		}
-		function setValue($aValue) {
-			$this->value = $aValue;
-			return $this;
-		}
 		function generate(){
 			return "<p " . $this->bData() . ">$this->value</p>";
 		}
 	}
 	class Anchor extends SimpleElement{//non finie
-		function __construct() {
-			$this->value = NULL;
-		}
-		function isComplex(){
-			return false;
-		}
-		function setValue($aValue) {
-			$this->value = $aValue;
-			return $this;
-		}
 		function setAction($aFunction) {
 			$this->action = $aFunction;
 			return $this;

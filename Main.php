@@ -9,8 +9,8 @@
 	}
 //Creation de l'instance de page
 	$a = new MainGenerator();
-	$b = new Paragraph();
-	$b->setValue("Hello world !")->setId("Banane");
+	$b = new Paragraph("Hello world !");
+	$b->setId("Banane");
 	$a->addElement($b);
 	echo $a->generate();
 ?>
