@@ -10,7 +10,7 @@
 //Creation de l'instance de page
 	$a = new MainGenerator();
 	$b = new Paragraph("Hello world !");
-	$b->setId("Banane");
+	$b->setId("Banane")->setClass("Kiwi");
 	$a->addElement($b);
 	echo $a->generate();
 ?>

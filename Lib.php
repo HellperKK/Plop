@@ -21,6 +21,9 @@
 			return $this;
 		}
 		function generate(){
+			return "<" . $this->balise(). " "  . $this->bData() . ">$this->value</" . $this->balise() . ">";
+		}
+		function balise(){
 			return "";
 		}
 		function bData(){
@@ -54,8 +57,8 @@
 		}
 	}
 	class Paragraph extends SimpleElement{
-		function generate(){
-			return "<p " . $this->bData() . ">$this->value</p>";
+		function balise(){
+			return "p";
 		}
 	}
 	class Anchor extends SimpleElement{//non finie
