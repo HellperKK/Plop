@@ -21,10 +21,13 @@
 			return $this;
 		}
 		function generate(){
-			return "<" . $this->balise(). " "  . $this->bData() . ">$this->value</" . $this->balise() . ">";
+			return "<" . $this->balise(). " "  . $this->bData() . ">" . $this->valueC() . "</" . $this->balise() . ">";
 		}
 		function balise(){
 			return "";
+		}
+		function valueC(){
+			return $this->value;
 		}
 		function bData(){
 			$a = "";
@@ -61,6 +64,12 @@
 			return "p";
 		}
 	}
+	class BlocQuote extends SimpleElement{
+		function balise(){
+			return "blockquote";
+		}
+	}
+	/* a voir plus tard
 	class Anchor extends SimpleElement{//non finie
 		function setAction($aFunction) {
 			$this->action = $aFunction;
@@ -70,4 +79,5 @@
 			return "<a href=test.html>$this->value</a>";
 		}
 	}
+	*/
 ?>
