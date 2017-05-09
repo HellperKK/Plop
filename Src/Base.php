@@ -59,25 +59,4 @@
 			return $chaine;
 		}
 	}
-	class Paragraph extends SimpleElement{
-		function balise(){
-			return "p";
-		}
-	}
-	class BlocQuote extends SimpleElement{
-		function balise(){
-			return "blockquote";
-		}
-	}
-	/* a voir plus tard
-	class Anchor extends SimpleElement{//non finie
-		function setAction($aFunction) {
-			$this->action = $aFunction;
-			return $this;
-		}
-		function generate(){
-			return "<a href=test.html>$this->value</a>";
-		}
-	}
-	*/
 ?>
