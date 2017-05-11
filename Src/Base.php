@@ -40,6 +40,11 @@
 			return $a;
 		}
 	}
+	class MonoElement extends SimpleElement{
+		function generate(){
+			return "<" . $this->balise(). " "  . $this->bData() . ">";
+		}
+	}
 	class ComplexElement{
 		function __construct(){
 			$this->value = [];
