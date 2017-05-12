@@ -41,6 +41,10 @@
 		}
 	}
 	class MonoElement extends SimpleElement{
+		function __construct() {
+			$this->id = "";
+			$this->classe = "";
+		}
 		function generate(){
 			return "<" . $this->balise(). " "  . $this->bData() . ">";
 		}

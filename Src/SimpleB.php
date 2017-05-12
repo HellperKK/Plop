@@ -29,9 +29,14 @@
 			return $a;
 		}
 	}
+	class Br extends MonoElement{
+		function balise(){
+			return "br";
+		}
+	}
 	class Image extends MonoElement{
-		function __construct($test) {
-			parent::__construct($test);
+		function __construct() {
+			parent::__construct();
 			$this->src = "";
 			$this->alt = "";
 		}

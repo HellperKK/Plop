@@ -10,9 +10,10 @@
 			$c = new BlocQuote("Voici comment on fait rougir les tomates !");
 			$d = new SimpleAnchor("Un lien !");
 			$d->setHref("http://www.google.fr")->setId("Banane")->setClass("Kiwi");
-			$e = new Image("");
+			$e = new Image();
 			$e->setSrc("https://www.w3schools.com/html/pic_mountain.jpg")->setAlt("Un test");
-			$this->addElement($b)->addElement($c)->addElement($d)->addElement($e);
+			$f = new Br();
+			$this->addElement($b)->addElement($c)->addElement($d)->addElement($f)->addElement($e);
 		}
 	}
 //Creation de l'instance de page
